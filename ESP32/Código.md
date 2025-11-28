@@ -6,8 +6,8 @@
 #define NUMERO_AMOSTRAS 5   // agora são 5 amostras
 
 // Wi-Fi
-const char* ssid = "DANIELA";
-const char* password = "17069696";
+const char* ssid = "WIFI";
+const char* password = "SENHA";
 
 // MQTT
 const char* mqtt_server = "broker.hivemq.com";
@@ -25,7 +25,6 @@ int valor_molhado = 0;
 int ultimo_valor_umidade = -1;
 
 
-// ========================== FUNÇÃO DE LEITURA ==========================
 int ler_umidade_solo() {
 
     int somatoria = 0;
@@ -42,7 +41,6 @@ int ler_umidade_solo() {
     return constrain(umidade_percentual, 0, 100);
 }
 
-// ========================== WIFI ==========================
 void conectaWiFi() {
     Serial.print("Conectando ao Wi-Fi ");
     Serial.println(ssid);
@@ -59,7 +57,7 @@ void conectaWiFi() {
     Serial.println(WiFi.localIP());
 }
 
-// ========================== MQTT ==========================
+
 void conectaMQTT() {
     while (!client.connected()) {
         Serial.println("Conectando ao broker MQTT...");
@@ -74,7 +72,6 @@ void conectaMQTT() {
     }
 }
 
-// ========================== SETUP ==========================
 void setup() {
     Serial.begin(9600);
     delay(1000);
@@ -103,7 +100,6 @@ void setup() {
     }
 }
 
-// ========================== LOOP ==========================
 void loop() {
 
     if (!client.connected()) {
