@@ -1,8 +1,4 @@
-# Projeto_IOT---Sistema-de-Irriga-o
 
-Beleza, Tadeo — vou te explicar **passo a passo como montar e entender esse código**, como se fosse um tutorial “faça você mesmo”. Vou cobrir **hardware**, **bibliotecas**, **ligação**, **cada bloco do código**, **calibração**, **testes** e **problemas comuns**. Vamos lá!
-
----
 **Objetivo do projeto**
 
 Ler a umidade do solo com um ESP32, calcular uma média com 5 amostras, armazenar a última leitura e publicar via MQTT em **dois tópicos**:
