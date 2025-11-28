@@ -11,8 +11,8 @@ const char* password = "SENHA";
 
 // MQTT
 const char* mqtt_server = "broker.hivemq.com";
-const char* mqtt_topic_normal = "umidade/lorenzo";
-const char* mqtt_topic_critico = "umidade/lorenzocritico";
+const char* mqtt_topic_normal = "umidade";
+const char* mqtt_topic_critico = "umidade";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
