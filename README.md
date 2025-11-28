@@ -125,18 +125,3 @@ void loop() {
   * e se < 40 publica também em `umidade/lorenzocritico`.
 
 ---
-
-
-# Testes práticos (antes e depois)
-
-* **Testar MQTT**: num PC, rode:
-
-  ```bash
-  mosquitto_sub -h broker.hivemq.com -t umidade/lorenzo
-  mosquitto_sub -h broker.hivemq.com -t umidade/lorenzocritico
-  ```
-
-  Você verá as mensagens publicadas pelo ESP32 quando ocorrerem.
-
-* **Testar reconnect**: desligue Wi-Fi do roteador e volte; código tenta reconectar no loop.
-
