@@ -24,7 +24,7 @@ Ler a umidade do solo com um ESP32, calcular uma média com 5 amostras, armazena
 * Se usar WiFi e ESP32, instale o pacote ESP32 Boards via Boards Manager e selecione **ESP32 Dev Module** em Tools > Board.
 * Configure baud (9600 no código) no Serial Monitor.
 
-# 6) Linha a linha
+# Linha a linha
 
 
 ```cpp
