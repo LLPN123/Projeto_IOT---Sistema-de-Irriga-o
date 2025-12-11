@@ -5,23 +5,16 @@
 #define PINO_SENSOR 34
 #define NUMERO_AMOSTRAS 5   // agora são 5 amostras
 
-// Wi-Fi
-const char* ssid = "WIFI";
-const char* password = "SENHA";
 
-// MQTT
 const char* mqtt_server = "broker.hivemq.com";
-const char* mqtt_topic_normal = "umidade";
-const char* mqtt_topic_critico = "umidade";
+const char* mqtt_topic_normal = "umidade/lorenzo";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-// calibração
 int valor_seco = 4095;
 int valor_molhado = 0;
 
-// valor armazenado da última leitura
 int ultimo_valor_umidade = -1;
 
 
@@ -56,7 +49,6 @@ void conectaWiFi() {
     Serial.print("IP: ");
     Serial.println(WiFi.localIP());
 }
-
 
 void conectaMQTT() {
     while (!client.connected()) {
