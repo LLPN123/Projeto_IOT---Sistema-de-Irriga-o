@@ -7,6 +7,12 @@ Ler a umidade do solo com um ESP32, calcular uma média com 5 amostras, armazena
 * `umidade/lorenzocritico` (quando mudar **e** for < 40%)
 
 ---
+**Diagrama**
+
+
+<img width="1403" height="642" alt="image" src="https://github.com/user-attachments/assets/2593e1ec-a54b-4113-9bef-abb3699a488f" />
+
+---
 
 **Materiais necessários**
 
