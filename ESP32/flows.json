@@ -1,0 +1,43 @@
+[
+    {
+        "id": "8aded3290fc093e0",
+        "type": "influxdb out",
+        "z": "794dc8dcea6976a6",
+        "influxdb": "3f683df29ecb941a",
+        "name": "jjd",
+        "measurement": "solo",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "dev",
+        "bucket": "medicao",
+        "x": 650,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "3f683df29ecb941a",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "jjd",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "https://us-east-1-1.aws.cloud2.influxdata.com/",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "f7a3d1cc49a04d07",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-influxdb": "0.7.0"
+        }
+    }
+]
