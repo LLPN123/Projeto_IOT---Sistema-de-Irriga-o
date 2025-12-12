@@ -78,14 +78,13 @@ void setup() {
 
     Serial.printf("Umidade inicial: %d%%\n", ultimo_valor_umidade);
 
-    // ENVIA A PRIMEIRA LEITURA AO MQTT
+   
     conectaMQTT();
     char payload[10];
     sprintf(payload, "%d", ultimo_valor_umidade);
     client.publish(mqtt_topic_normal, payload);
     Serial.printf("Primeira leitura enviada ao tópico normal: %s\n", payload);
 
-    // SE FOR CRÍTICO (< 40) também envia
     if (ultimo_valor_umidade < 40) {
         client.publish(mqtt_topic_critico, payload);
         Serial.printf("Primeira leitura enviada ao tópico crítico: %s\n\n", payload);
@@ -102,24 +101,23 @@ void loop() {
 
     int umidade_atual = ler_umidade_solo();
 
-    // Só envia se o valor mudou
     if (umidade_atual != ultimo_valor_umidade) {
 
         Serial.printf("Nova umidade detectada: %d%% (antes: %d%%)\n",
                       umidade_atual, ultimo_valor_umidade);
 
-        // atualiza o valor
+        
         ultimo_valor_umidade = umidade_atual;
 
-        // Prepara payload
+       
         char payload[10];
         sprintf(payload, "%d", umidade_atual);
 
-        // Envio normal
+  
         client.publish(mqtt_topic_normal, payload);
         Serial.printf("Enviado ao tópico normal: %s\n", payload);
 
-        // Envio crítico (somente se < 40)
+
         if (umidade_atual < 40) {
             client.publish(mqtt_topic_critico, payload);
             Serial.printf("Enviado ao tópico CRÍTICO: %s\n", payload);
